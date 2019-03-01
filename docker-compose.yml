@@ -11,4 +11,6 @@ services:
     depends_on:
      - db
     volumes:
-     - ./app:/app/api
+     - ./app:/usr/src/app
+     - /usr/src/app/node_modules
+    command: npm start
