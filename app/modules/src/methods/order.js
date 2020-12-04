@@ -9,9 +9,8 @@ const inputSchema = Joi.object().keys({
 });
 exports.getList = async () => {
     const orderRepository = new OrderRepo();
-    console.log(process.env.DATABASE_HOST);
     const order = await orderRepository.getList().then(
-        result => result.map(TransformOrder.transform),
+        (result) => result.map(TransformOrder.transform),
     );
     return order;
 };
